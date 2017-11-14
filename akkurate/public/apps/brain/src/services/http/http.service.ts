@@ -70,7 +70,7 @@ export class HttpService {
   private getHeaders() {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json'),
-    headers.append('Authorization', '7e5216c138b3c482a8bba01c20a8304e');
+    headers.append('Authorization', 'My-Key');
     
     return headers;
   }
