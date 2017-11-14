@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>{{ model.id }}</h2>
+  <div>
+    <span>key: </span> <textarea type="text" cols="100" rows="1" placeholder="{{model.key}}" [(ngModel)]="model.key"></textarea><br />
+    <span>details: </span> <textarea type="text" cols="100" rows="1" placeholder="{{model.details}}" [(ngModel)]="model.details"></textarea>
+    <span>User eMail: </span> <textarea type="text" cols="100" rows="1" placeholder="{{model.user.email}}" [(ngModel)]="model.user.email"></textarea>
+    <button (click)="update()">Save</button>
+  </div>
+  <button (click)="goBack()">Go back</button>
+</div>

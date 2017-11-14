@@ -1,0 +1,67 @@
+<div class="container">
+<p>Create a new activities:
+  <input type="text" placeholder="key" [(ngModel)]="model.key">
+  <input type="text" placeholder="id_user" [(ngModel)]="model.id_user" value="2">
+  <button (click)="post()">
+    Save
+  </button>
+</p>
+
+  <h2>Activités</h2>
+
+  <div class="row">
+    <div *ngFor="let activity of activities | reverseArray; let i = index" class="col-8">
+      <ul class="list-group" *ngIf="i < 20">
+        <li class="list-group-item">
+          <a routerLink="/activity/{{activity.id}}">
+            {{activity.id}}
+          </a>
+          <button class="btn btn-primary deleteButton" (click)="delete(activity.id)">X</button>
+        </li>
+        <li class="list-group-item">{{activity.method}}</li>
+        <!-- <li class="list-group-item">{{activity.details}}</li> -->
+        <li class="list-group-item">{{activity.status}}</li>
+        <li class="list-group-item">{{activity.user.email}}</li>
+        <li class="list-group-item">{{activity.key}}</li>
+        <li class="list-group-item">{{activity.date_updated | formatDate }}</li>
+      </ul>
+      <br />
+    </div>
+  </div>
+</div>
+  <!-- Code Fonctionnel -->
+
+  <div class="welcome">
+    <h2>Bienvenue sur Cerebro</h2>
+    <p>Cerebro est l'application centrale de l'Agence Subvitamine(tm).</p>
+    <p>Cet outil est sécurisé, privé et exclusivement destiné à l'usage professionnel des salariés de l'Agence Subvitamine(tm).</p>
+    <p>Ne faites jamais quelque chose que nous pourrions tous regretter.</p>
+    <p>Si vous avez la moindre question sur son utilisation, contactez <a href="mailto:julie@subvitamine.com">Julie</a>.</p>
+</div>
+
+<div class="shortcuts">
+    <h2>Raccourcis</h2>
+    <ul class="list-unstyled">
+        <li>
+            <a href="http://getthelead.busineyss.com/intranet/auth/login?redirect=%2Fintranet" target="_blank">GetTheLead</a>
+        </li>
+        <li>
+            <a href="https://app.acrmforyou.com" target="_blank">A CRM for you</a>
+        </li>
+        <li>
+            <a href="https://subvitamine.atlassian.net/secure/Dashboard.jspa" target="_blank">JIRA</a>
+        </li>
+        <li>
+            <a href="https://bitbucket.org/dashboard/repositories" target="_blank">Bitbucket</a>
+        </li>
+        <li>
+            <a href="https://subvitamine.atlassian.net/" target="_blank">Confluence</a>
+        </li>
+        <li>
+            <a href="https://subvitamine.zendesk.com/hc/fr" target="_blank">Zendesk Help Center</a>
+        </li>
+        <li>
+            <a href="https://subvitamine.zendesk.com/agent/" target="_blank">Zendesk Agent</a>
+        </li>
+    </ul>
+</div>
